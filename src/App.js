@@ -1,12 +1,12 @@
 import React from 'react'
-import Heading from './Heading'
-import Footer from './Footer'
-import { NewsContextProvider } from './NewsContext'
+import Heading from './components/Heading'
+import Footer from './components/Footer'
+import { NewsContextProvider } from './components/NewsContext'
 import {Route , Switch} from "react-router-dom"
 import { Component } from 'react'
-import Home from './Home'
-import request from './request'
-import Category from './Category'
+import Home from './components/Home'
+import request from './components/request'
+import Category from './components/Category'
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import React,{createContext, useEffect, useState} from "react";
-import axios from 'axios'
+import axios from '../axios'
 import { Col } from "react-bootstrap";
 export const NewsContext=createContext();
 export const NewsContextProvider=(props)=>{
@@ -9,8 +9,6 @@ useEffect(()=>{
     axios.get(`https://newsapi.org/v2/everything?q=sports&apiKey=${apiKey}&language=en`
     ).then(response=>setData(response.data))
     .catch(error=>console(error));
-  
-    
 },[])
 console.log(data)
     return(

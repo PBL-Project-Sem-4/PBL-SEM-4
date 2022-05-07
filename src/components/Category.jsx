@@ -1,9 +1,8 @@
-import { useEffect } from 'react'
-import { useState } from 'react'
+import React,{ useEffect ,useState} from 'react'
 import { useContext } from 'react'
 import Cards from './Cards'
 import "./category.css"
-import axios from "./axios"
+import axios from "../axios"
 import { NewsContext } from './NewsContext'
 import CategoryCard from './CategoryCard'
 function Category(props) {
