@@ -13,7 +13,7 @@ function App () {
   const [isLoggedin, setIsLoggedIn] = useState(false)
   return (
     <div>
-      <Heading isLoggedin={isLoggedin} />
+      <Heading isLoggedin={isLoggedin}/>
 
       <Switch>
         <Route exact path='/' component={Home} />

@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { addUser } from "../axios";
+import { useHistory } from "react-router-dom";
+import { IsLoggedin } from "./IsLoggedin";
 function Signin() {
+  const history = useHistory();
+  const userInfo = { Username: "", Email: "", Password: "" };
+  const [user, setUser] = useState(userInfo);
+  const changeHandler = (event) => {
+    setUser({ ...user, [event.target.name]: event.target.value });
+  };
+  const formSubmitHandler = async (event) => {
+    await addUser(user);
+    console.log("Successfully signedin user");
+    history.push("/");
+  };
   return (
     <div>
       <div class="mymainbody h-auto">
@@ -14,14 +28,15 @@ function Signin() {
               />
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 col-8">
-              <form class="myform" action="/signin" method="POST">
+              <form class="myform">
                 <div class="form-outline mb-4">
                   <input
                     required="true"
                     type="text"
-                    name="uname"
+                    name="Username"
                     class="form-control form-control-lg"
                     placeholder="Enter name"
+                    onChange={changeHandler}
                   />
                   <label class="form-label" for="form3Example3">
                     user name
@@ -32,9 +47,10 @@ function Signin() {
                     required="true"
                     type="email"
                     id="form3Example3"
-                    name="email"
+                    name="Email"
                     class="form-control form-control-lg"
                     placeholder="Enter a valid email address"
+                    onChange={changeHandler}
                   />
                   <label class="form-label" for="form3Example3">
                     Email address
@@ -45,9 +61,10 @@ function Signin() {
                   <input
                     required="true"
                     type="password"
-                    name="pass"
+                    name="Password"
                     class="form-control form-control-lg "
                     placeholder="Enter password"
+                    onChange={changeHandler}
                   />
                   <label class="form-label" for="form3Example4">
                     Password
@@ -68,10 +85,11 @@ function Signin() {
 
                 <div class="text-center text-lg-start mt-4 pt-2 ">
                   <button
-                    type="submit"
+                    type="button"
                     class="btn btn-danger btn-lg "
                     id="signinbtn"
                     style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
+                    onClick={formSubmitHandler}
                   >
                     Sign In
                   </button>
