@@ -15,7 +15,7 @@ function Row(props) {
     axios
       .get(`${props.type}`)
       .then((response) => setData(response.data))
-      .catch((error) => console(error));
+      .catch((error) => console.log(error));
     console.log(data);
   }, []);
 

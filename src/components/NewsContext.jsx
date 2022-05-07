@@ -8,7 +8,7 @@ export const NewsContextProvider=(props)=>{
 useEffect(()=>{
     axios.get(`https://newsapi.org/v2/everything?q=sports&apiKey=${apiKey}&language=en`
     ).then(response=>setData(response.data))
-    .catch(error=>console(error));
+    .catch(error=>console.log(error));
 },[])
 console.log(data)
     return(

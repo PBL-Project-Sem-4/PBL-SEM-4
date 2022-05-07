@@ -11,12 +11,9 @@ import Login from './components/Login'
 import Signin from './components/Signin'
 function App () {
   const [isLoggedin, setIsLoggedIn] = useState(false)
-  useEffect({
-    
-  },[])
   return (
     <div>
-      <Heading isLoggedin={isLoggedin}/>
+      <Heading isLoggedin={isLoggedin} />
 
       <Switch>
         <Route exact path='/' component={Home} />

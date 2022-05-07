@@ -12,7 +12,7 @@ function HeadNews() {
 useEffect(()=>{
    axios.get(`https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${apiKey}`
    ).then(response=>setData(response.data))
-   .catch(error=>console(error))
+   .catch(error=>console.log(error))
      
 },[])
 // const news=data.articles[Math.floor(Math.random()*10)]
