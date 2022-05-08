@@ -1,8 +1,28 @@
-import React from "react";
-import Heading from "./Heading";
-import Footer from "./Footer";
-import {Link} from 'react-router-dom';
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import { authenticateUser } from "../axios";
 function Login(props) {
+  const history = useHistory();
+  const obj = { Username: "", Password: "" };
+  const [userInfo, setUserInfo] = useState(obj);
+  const onLoginHandler = async(event) => {
+    let res = await authenticateUser(userInfo);
+    if(res.data.message==='User authenticated!')
+    {
+      props.setToken(true)
+      props.setUsername(res.data.username)
+      localStorage.removeItem("Username")
+      localStorage.setItem("Username",res.data.username)
+      history.push('/')
+    }
+    else{
+      localStorage.setItem("Message",res.data.message)
+      history.push('/')
+    }
+  };
+  const changeHandler = (event) => {
+    setUserInfo({ ...userInfo, [event.target.name]: event.target.value });
+  };
   return (
     <div>
       <div class="mymainbody h-auto">
@@ -16,17 +36,18 @@ function Login(props) {
               />
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 col-8">
-              <form class="myform" action="/login" method="POST">
+              <form class="myform">
                 <div class="form-outline mb-4">
                   <input
                     required="true"
                     type="text"
-                    name="uname"
+                    name="Username"
                     class="form-control form-control-lg"
                     placeholder="Enter Username"
+                    onChange={changeHandler}
                   />
                   <label class="form-label" for="form3Example3">
-                    User name
+                    Username
                   </label>
                 </div>
 
@@ -34,9 +55,10 @@ function Login(props) {
                   <input
                     required="true"
                     type="password"
-                    name="pass"
+                    name="Password"
                     class="form-control form-control-lg "
                     placeholder="Enter password"
+                    onChange={changeHandler}
                   />
                   <label class="form-label" for="form3Example4">
                     Password
@@ -45,15 +67,18 @@ function Login(props) {
 
                 <div class="text-center text-lg-start mt-4 pt-2">
                   <button
-                    type="submit"
                     class="btn btn-primary btn-lg"
                     style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
+                    onClick={onLoginHandler}
+                    type="button"
                   >
                     Login
                   </button>
                   <p class="small fw-bold mt-2 pt-1 mb-0 no_account">
                     Don't have an account?{" "}
-                    <Link to={'/signin'} class="link-danger">Register</Link>
+                    <Link to={"/signin"} class="link-danger">
+                      Register
+                    </Link>
                   </p>
                 </div>
               </form>

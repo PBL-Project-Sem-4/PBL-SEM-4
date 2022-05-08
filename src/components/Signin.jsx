@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { addUser } from "../axios";
 import { useHistory } from "react-router-dom";
-import { IsLoggedin } from "./IsLoggedin";
-function Signin() {
+function Signin(props) {
   const history = useHistory();
   const userInfo = { Username: "", Email: "", Password: "" };
   const [user, setUser] = useState(userInfo);
@@ -11,9 +10,20 @@ function Signin() {
     setUser({ ...user, [event.target.name]: event.target.value });
   };
   const formSubmitHandler = async (event) => {
-    await addUser(user);
-    console.log("Successfully signedin user");
-    history.push("/");
+    const response=await addUser(user);
+    if(response)
+    {
+      console.log("Signin successfully!")
+      props.setToken(true)
+      props.setUsername(response.data.Username)
+      localStorage.setItem("Username",response.data.Username)
+      history.push('/')
+    }
+    else{
+      console.log("Signin unsuccessfull!")
+      props.setToken(false);
+      history.push('/')
+    }
   };
   return (
     <div>
@@ -39,7 +49,7 @@ function Signin() {
                     onChange={changeHandler}
                   />
                   <label class="form-label" for="form3Example3">
-                    user name
+                    Username
                   </label>
                 </div>
                 <div class="form-outline mb-4">

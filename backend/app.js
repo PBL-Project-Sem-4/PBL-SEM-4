@@ -2,12 +2,12 @@ import express from 'express'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import bodyParser from 'body-parser'
-import user from './models/user'
+import userRouter from './routes/user-routes.js'
 const app = express()
 app.use(bodyParser.json({ extended: true }))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
-app.use('/', user)
+app.use('/', userRouter)
 const PORT = 9000
 const URL =
   'mongodb+srv://admin:admin1234@cluster0.wiyya.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'

@@ -1,9 +1,30 @@
-import user from '../models/user'
+import user from '../models/user.js'
 
-export const getUser = async (request, response) => {
+export const authenticateUser = async (request, response) => {
   try {
-    let c = await user.findOne()
-    response.json(c)
+    let userInfo = request.body
+    console.log(userInfo)
+    let Message = ''
+    await user
+      .findOne({ Username: userInfo.Username })
+      .then(data => {
+        console.log(data)
+        if (!data) {
+          Message = 'User not found'
+        } else {
+          if (data.Password === userInfo.Password) {
+            Message = 'User authenticated!'
+          } else {
+            Message = 'Wrong password,Try again!'
+          }
+        }
+      })
+      .then(() => {
+        response.json({
+          username: userInfo.Username,
+          message: Message
+        })
+      })
   } catch (error) {
     response.json({ message: error.message })
   }

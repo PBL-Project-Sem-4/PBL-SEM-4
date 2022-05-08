@@ -5,8 +5,8 @@ const instance = axios.create({
 })
 
 const url = 'http://localhost:9000'
-export const getUser = async data => {
-  return await axios.post(`${url}/loginUser`)
+export const authenticateUser = async userInfo => {
+  return await axios.post(`${url}/loginUser`,userInfo)
 }
 
 export const addUser = async data => {

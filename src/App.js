@@ -10,19 +10,35 @@ import Category from './components/Category'
 import Login from './components/Login'
 import Signin from './components/Signin'
 function App () {
-  const [isLoggedin, setIsLoggedIn] = useState(false)
+  const [token, setToken] = useState(false)
+  const [username, setUsername] = useState('')
+  useEffect(() => {
+    let uName = localStorage.getItem('Username')
+    if (uName) {
+      setToken(true)
+      setUsername(uName)
+    }
+  }, [])
   return (
     <div>
-      <Heading isLoggedin={isLoggedin}/>
-
+      <Heading
+        isLoggedin={token}
+        Username={username}
+        setToken={setToken}
+        setUsername={setUsername}
+      />
       <Switch>
         <Route exact path='/' component={Home} />
         <Route
           path='/sports'
           component={() => <Category type={request.SportsNews} />}
         />
-        <Route exact path='/login' component={Login} />
-        <Route exact path='/signin' component={Signin} />
+        <Route exact path='/login'>
+          <Login setToken={setToken} setUsername={setUsername} />
+        </Route>
+        <Route exact path='/signin'>
+          <Signin setToken={setToken} setUsername={setUsername} />
+        </Route>
         <Route
           path='/lifestyle'
           component={() => <Category type={request.LifestyleNews} />}

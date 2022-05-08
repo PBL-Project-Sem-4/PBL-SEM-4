@@ -1,11 +1,12 @@
 import React from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
-
+import Avatar from "react-avatar";
 const HeaderButtons = (props) => {
   if (props.isLoggedin) {
     return (
       <div class="elements d-flex flex-row m-auto  ">
+        <Avatar name={props.username} round={true} size="50"/>
         <button class="contact_us my-auto d-flex flex-row btn btn-dark">
           <i class="fa fa-regular fa-phone"></i>
           <a href="#myfooter">Contact Us</a>
@@ -13,7 +14,7 @@ const HeaderButtons = (props) => {
         <button class="logout my-auto d-flex flex-row btn btn-dark ">
           <i class="fa fa-sign-out" aria-hidden="true"></i>
 
-          <Link to={"/logout"} class="link-danger">
+          <Link to={"/"} class="link-danger" onClick={props.logoutHandler}>
             Logout
           </Link>
         </button>
@@ -46,6 +47,11 @@ const HeaderButtons = (props) => {
 };
 
 function Heading(props) {
+  const logoutHandler=()=>{
+    props.setToken(false)
+    props.setUsername('')
+    localStorage.removeItem("Username")
+  }
   return (
     <div>
       <div class="navAbove header">
@@ -60,7 +66,7 @@ function Heading(props) {
           </i>{" "}
           News
         </h1>
-        <HeaderButtons isLoggedin={props.isLoggedin} />
+        <HeaderButtons isLoggedin={props.isLoggedin} username={props.Username} logoutHandler={logoutHandler}/>
       </div>
       <div class="navigation">
         <nav class="navbar navbar-expand-lg bg-dark">
