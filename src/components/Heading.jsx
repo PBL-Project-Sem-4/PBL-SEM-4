@@ -6,65 +6,67 @@ const HeaderButtons = (props) => {
   if (props.isLoggedin) {
     return (
       <div class="elements d-flex flex-row my-auto  align-items-center ">
-        <Avatar name={props.username} round={true} size="50"/>
+        <Avatar name={props.username} round={true} size="50" />
         <button class="contact_us my-auto d-flex flex-row btn btn-dark">
           <i class="fa fa-regular fa-phone"></i>
           <a href="#myfooter">Contact Us</a>
         </button>
-        <button class="logout my-auto d-flex flex-row btn btn-dark ">
-          <i class="fa fa-sign-out" aria-hidden="true"></i>
-
-          <Link to={"/"} class="link-danger" onClick={props.logoutHandler}>
+        <Link to={"/"} class="link-danger" onClick={props.logoutHandler}>
+          <button class="logout my-auto d-flex flex-row btn btn-dark ">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>
             Logout
-          </Link>
-        </button>
+          </button>
+        </Link>
       </div>
     );
   } else {
     return (
-      <div class="elements d-flex flex-row m-auto align-items-center justify-content-center ">
-        <button class="signin my-auto d-flex flex-row btn btn-dark">
-          <i class="fa fa-duotone fa-user"></i>
-          <Link to={"/signin"}>
-            Sign in
-          </Link>
-        </button>
+      <div class="elements d-flex flex-row m-auto  ">
+        <Link to={"/signin"}>
+          <button class="signin my-auto d-flex flex-row btn btn-dark">
+            <i class="fa fa-duotone fa-user"></i>Sign in{" "}
+          </button>
+        </Link>
+
         <button class="contact_us my-auto d-flex flex-row btn btn-dark">
           <i class="fa fa-regular fa-phone"></i>
 
           <a href="#myfooter">Contact Us</a>
         </button>
-        <button class="logout my-auto d-flex flex-row btn btn-dark ">
-          <i class="fa fa-sign-out" aria-hidden="true"></i>
 
-          <Link to={"/login"}>
-            Login
-          </Link>
-        </button>
+        <Link to={"/login"}>
+          {" "}
+          <button class="logout my-auto d-flex flex-row btn btn-dark ">
+            <i class="fa fa-sign-out" aria-hidden="true"></i>Login
+          </button>
+        </Link>
       </div>
     );
   }
 };
 
 function Heading(props) {
-  const logoutHandler=()=>{
-    props.setToken(false)
-    props.setUsername('')
-    localStorage.removeItem("Username")
-  }
+  const logoutHandler = () => {
+    props.setToken(false);
+    props.setUsername("");
+    localStorage.removeItem("Username");
+  };
   return (
     <div>
       <div class="navAbove header">
-        <div className="newstitle" >
-        <h1   class=" newstitle fs-1 "
-              style={{ fontFamily: "Poppins ,sans-serif" }}> 
-
-              QUICK NEWS
-
-         
-        </h1>
+        <div className="newstitle">
+          <h1
+            class=" newstitle fs-1 "
+            style={{ fontFamily: "Poppins ,sans-serif" }}
+          >
+            QUICK NEWS
+          </h1>
         </div>
-        <HeaderButtons isLoggedin={props.isLoggedin} username={props.Username} logoutHandler={logoutHandler}/>
+        <HeaderButtons
+          isLoggedin={props.isLoggedin}
+          username={props.Username}
+          logoutHandler={logoutHandler}
+        />
       </div>
       <div class="navigation">
         <nav class="navbar navbar-expand-lg bg-dark">
@@ -80,48 +82,67 @@ function Heading(props) {
             >
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse-horizontal navbar-collapse" id="navbarSupportedContent">
+            <div
+              class="collapse-horizontal navbar-collapse"
+              id="navbarSupportedContent"
+            >
               <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                <li class="nav-item navli" >
-                  <Link class="nav-link clr active" aria-current="page" to="/" >
+                <li class="nav-item navli">
+                  <Link class="nav-link clr active" aria-current="page" to="/">
                     Home
                   </Link>
                 </li>
-                <li class="nav-item navli">
-                  <Link class="nav-link clr " aria-current="page" to="/sports">
-                    Sports
-                  </Link>
-                </li>
-                <li class="nav-item navli">
-                  <Link
-                    class="nav-link clr "
-                    aria-current="page"
-                    to="/lifestyle"
-                  >
-                    Lifestyle
-                  </Link>
-                </li>
-                <li class="nav-item navli">
-                  <Link class="nav-link clr " aria-current="page" to="/fasion">
-                    Fashion
-                  </Link>
-                </li>
-                <li class="nav-item navli">
-                  <Link class="nav-link clr " aria-current="page" to="/music">
-                    Music
-                  </Link>
-                </li>
-                <li class="nav-item navli">
-                  <Link
-                    class="nav-link clr "
-                    aria-current="page"
-                    to="/business"
-                  >
-                    Business
-                  </Link>
-                </li>
-               
-              
+                {props.isLoggedin && (
+                  <li class="nav-item navli">
+                    <Link
+                      class="nav-link clr "
+                      aria-current="page"
+                      to="/sports"
+                    >
+                      Sports
+                    </Link>
+                  </li>
+                )}
+                {props.isLoggedin && (
+                  <li class="nav-item navli">
+                    <Link
+                      class="nav-link clr "
+                      aria-current="page"
+                      to="/lifestyle"
+                    >
+                      Lifestyle
+                    </Link>
+                  </li>
+                )}
+                {props.isLoggedin && (
+                  <li class="nav-item navli">
+                    <Link
+                      class="nav-link clr "
+                      aria-current="page"
+                      to="/fasion"
+                    >
+                      Fashion
+                    </Link>
+                  </li>
+                )}
+                {props.isLoggedin && (
+                  <li class="nav-item navli">
+                    <Link class="nav-link clr " aria-current="page" to="/music">
+                      Music
+                    </Link>
+                  </li>
+                )}
+                {props.isLoggedin && (
+                  <li class="nav-item navli">
+                    <Link
+                      class="nav-link clr "
+                      aria-current="page"
+                      to="/business"
+                    >
+                      Business
+                    </Link>
+                  </li>
+                )}
               </ul>
               <form class="d-flex">
                 <input
