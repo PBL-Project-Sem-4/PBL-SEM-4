@@ -22,7 +22,7 @@ const HeaderButtons = (props) => {
     );
   } else {
     return (
-      <div class="elements d-flex flex-row m-auto  ">
+      <div class="elements d-flex flex-row m-auto align-items-center justify-content-center ">
         <button class="signin my-auto d-flex flex-row btn btn-dark">
           <i class="fa fa-duotone fa-user"></i>
           <Link to={"/signin"}>
@@ -55,7 +55,7 @@ function Heading(props) {
   return (
     <div>
       <div class="navAbove header">
-        <div className="newstitle">
+        <div className="newstitle" >
         <h1   class=" newstitle fs-1 "
               style={{ fontFamily: "Poppins ,sans-serif" }}> 
 
