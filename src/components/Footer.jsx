@@ -1,8 +1,9 @@
 import React from 'react'
-
+import "./style.css"
 function Footer() {
   return (
-    <div class="footer_class">
+    <div class="footer_class my-auto mt-4" id="myfooter"  
+    style={{ fontFamily: "Poppins ,sans-serif" }}>
     <footer
                 class="text-center text-lg-start text-dark"
                 style={{backgroundColor: '#ECEFF1'}}
@@ -12,9 +13,9 @@ function Footer() {
                    style={{backgroundColor: 'red'}}
                    >
             <div class="sports_me-5">
-              <span>Get connected with us on social networks:</span>
+              <h5>Get connected with us on social networks:</h5>
             </div>
-            <div>
+            <div class="myfooter_icons fs-4">
               <a href="https://www.facebook.com/harsh.dhawale.792/" target="blank" class="text-white me-4">
                 <i class="fab fa-facebook-f"></i>
               </a>
@@ -33,7 +34,8 @@ function Footer() {
             </div>
           </section>
           <section class="">
-            <div class="container text-center text-md-start mt-5">
+            <div class="container text-center text-md-start mt-5" 
+              style={{ fontFamily: "Poppins ,sans-serif" }}>
               <div class="row mt-3">
                 <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                   <h6 class="sports_text-uppercase fw-bold">Quick News</h6>
@@ -42,7 +44,7 @@ function Footer() {
                       style={{width: '60px', backgroundColor: '#7c4dff', height: '2px'}}
                       />
                   <p>
-                    Here we are providing quick summary for long news so that we can get quick gest of the news and we can smartly utilise the time in this busy world.
+                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum obcaecati voluptas dolorum, modi doloribus quos magnam. Commodi quia consequatur voluptas illum, velit nemo sed quis, provident voluptatum eaque esse, ipsa adipisci ullam? Porro eos quisquam harum laborum quaerat cumque iure omnis, dolorum unde in animi molestias consectetur at atque fuga. 
                   </p>
                 </div>
                 

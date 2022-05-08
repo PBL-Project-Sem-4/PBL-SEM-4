@@ -5,7 +5,7 @@ import Avatar from "react-avatar";
 const HeaderButtons = (props) => {
   if (props.isLoggedin) {
     return (
-      <div class="elements d-flex flex-row m-auto  ">
+      <div class="elements d-flex flex-row my-auto  align-items-center ">
         <Avatar name={props.username} round={true} size="50"/>
         <button class="contact_us my-auto d-flex flex-row btn btn-dark">
           <i class="fa fa-regular fa-phone"></i>
@@ -25,7 +25,7 @@ const HeaderButtons = (props) => {
       <div class="elements d-flex flex-row m-auto  ">
         <button class="signin my-auto d-flex flex-row btn btn-dark">
           <i class="fa fa-duotone fa-user"></i>
-          <Link to={"/signin"} class="link-danger">
+          <Link to={"/signin"}>
             Sign in
           </Link>
         </button>
@@ -37,7 +37,7 @@ const HeaderButtons = (props) => {
         <button class="logout my-auto d-flex flex-row btn btn-dark ">
           <i class="fa fa-sign-out" aria-hidden="true"></i>
 
-          <Link to={"/login"} class="link-danger">
+          <Link to={"/login"}>
             Login
           </Link>
         </button>
@@ -55,17 +55,15 @@ function Heading(props) {
   return (
     <div>
       <div class="navAbove header">
-        <h1>
-          <i>
-            <span
-              class=" newstitle fs-1 "
-              style={{ fontFamily: "Poppins ,sans-serif" }}
-            >
-              QUICK
-            </span>
-          </i>{" "}
-          News
+        <div className="newstitle">
+        <h1   class=" newstitle fs-1 "
+              style={{ fontFamily: "Poppins ,sans-serif" }}> 
+
+              QUICK NEWS
+
+         
         </h1>
+        </div>
         <HeaderButtons isLoggedin={props.isLoggedin} username={props.Username} logoutHandler={logoutHandler}/>
       </div>
       <div class="navigation">
@@ -82,10 +80,10 @@ function Heading(props) {
             >
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse-horizontal navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                <li class="nav-item navli">
-                  <Link class="nav-link clr active" aria-current="page" to="/">
+                <li class="nav-item navli" >
+                  <Link class="nav-link clr active" aria-current="page" to="/" >
                     Home
                   </Link>
                 </li>
@@ -122,15 +120,8 @@ function Heading(props) {
                     Business
                   </Link>
                 </li>
-                <li class="nav-item navli">
-                  <a
-                    class="nav-link clr "
-                    aria-current="page"
-                    href="#footer-container"
-                  >
-                    Contact
-                  </a>
-                </li>
+               
+              
               </ul>
               <form class="d-flex">
                 <input
@@ -139,7 +130,7 @@ function Heading(props) {
                   placeholder="Search"
                   aria-label="Search"
                 />
-                <button class="btn btn-outline-danger" type="submit">
+                <button class="btn btn-outline-light" type="submit">
                   Search
                 </button>
               </form>

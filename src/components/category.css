@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Lato:ital,wght@0,400;1,100&family=Noto+Sans&family=PT+Sans&family=Redressed&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@200&display=swap');
 body{
     margin: 0;
     overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 .losign:hover{
     background-color: #000000;

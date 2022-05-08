@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { authenticateUser } from "../axios";
+import "./style.css"
 function Login(props) {
   const history = useHistory();
   const obj = { Username: "", Password: "" };
   const [userInfo, setUserInfo] = useState(obj);
-  const onLoginHandler = async(event) => {
+  const onLoginHandler = async (event) => {
     let res = await authenticateUser(userInfo);
-    if(res.data.message==='User authenticated!')
-    {
+    if (res.data.message === 'User authenticated!') {
       props.setToken(true)
       props.setUsername(res.data.username)
       localStorage.removeItem("Username")
-      localStorage.setItem("Username",res.data.username)
+      localStorage.setItem("Username", res.data.username)
       history.push('/')
     }
-    else{
-      localStorage.setItem("Message",res.data.message)
+    else {
+      localStorage.setItem("Message", res.data.message)
       history.push('/')
     }
   };
@@ -36,7 +36,7 @@ function Login(props) {
               />
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 col-8">
-              <form class="myform">
+              <form class="myform" onSubmit={authenticateUser} method="POST">
                 <div class="form-outline mb-4">
                   <input
                     required="true"

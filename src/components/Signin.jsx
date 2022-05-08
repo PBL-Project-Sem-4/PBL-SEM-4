@@ -38,7 +38,7 @@ function Signin(props) {
               />
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 col-8">
-              <form class="myform">
+              <form class="myform" method="POST" action="signinUser">
                 <div class="form-outline mb-4">
                   <input
                     required="true"
