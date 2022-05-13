@@ -21,10 +21,11 @@ const HeaderButtons = (props) => {
     );
   } else {
     return (
-      <div class="elements d-flex flex-row m-auto  ">
+      <div class="elements d-flex flex-row-lg my-auto  justify-content-end">
         <Link to={"/signin"}>
           <button class="signin my-auto d-flex flex-row btn btn-dark">
-            <i class="fa fa-duotone fa-user"></i>Sign in{" "}
+            <i class="fa fa-duotone fa-user "></i>
+            <h6>Sign in{" "}</h6>
           </button>
         </Link>
 
@@ -37,7 +38,7 @@ const HeaderButtons = (props) => {
         <Link to={"/login"}>
           {" "}
           <button class="logout my-auto d-flex flex-row btn btn-dark ">
-            <i class="fa fa-sign-out" aria-hidden="true"></i>Login
+            <i class="fa fa-sign-out" aria-hidden="true"></i><h6>Login{" "}</h6>
           </button>
         </Link>
       </div>
@@ -53,7 +54,7 @@ function Heading(props) {
   };
   return (
     <div>
-      <div className="navAbove header">
+      <div className="header ">
         <div className="newstitle">
           <h1
             class=" newstitle fs-1 "
@@ -69,7 +70,7 @@ function Heading(props) {
         />
       </div>
       <div class="navigation">
-        <nav class="navbar navbar-expand-lg bg-dark">
+        <nav class="navbar navbar-expand-md bg-dark">
           <div class="container-fluid">
             <button
               class="navbar-toggler"
@@ -87,15 +88,15 @@ function Heading(props) {
               id="navbarSupportedContent"
             >
               <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                <li class="nav-item navli">
-                  <Link class="nav-link clr active" aria-current="page" to="/">
+                <li class="nav-item ">
+                  <Link class="nav-link  active"  aria-current="page" to="/">
                     Home
                   </Link>
                 </li>
                 {props.isLoggedin && (
-                  <li class="nav-item navli">
+                  <li class="nav-item ">
                     <Link
-                      class="nav-link clr "
+                      class="nav-link  "
                       aria-current="page"
                       to="/sports"
                     >
@@ -104,9 +105,9 @@ function Heading(props) {
                   </li>
                 )}
                 {props.isLoggedin && (
-                  <li class="nav-item navli">
+                  <li class="nav-item ">
                     <Link
-                      class="nav-link clr "
+                      class="nav-link  "
                       aria-current="page"
                       to="/lifestyle"
                     >
@@ -115,9 +116,9 @@ function Heading(props) {
                   </li>
                 )}
                 {props.isLoggedin && (
-                  <li class="nav-item navli">
+                  <li class="nav-item ">
                     <Link
-                      class="nav-link clr "
+                      class="nav-link  "
                       aria-current="page"
                       to="/fasion"
                     >
@@ -126,16 +127,16 @@ function Heading(props) {
                   </li>
                 )}
                 {props.isLoggedin && (
-                  <li class="nav-item navli">
-                    <Link class="nav-link clr " aria-current="page" to="/music">
+                  <li class="nav-item ">
+                    <Link class="nav-link  " aria-current="page" to="/music">
                       Music
                     </Link>
                   </li>
                 )}
                 {props.isLoggedin && (
-                  <li class="nav-item navli">
+                  <li class="nav-item ">
                     <Link
-                      class="nav-link clr "
+                      class="nav-link  "
                       aria-current="page"
                       to="/business"
                     >
