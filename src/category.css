@@ -47,7 +47,7 @@ body{
     position: relative;
     height: 30%;
     padding: 3% 17%;
-    background-color: rgb(248, 252, 251);
+    background-color: #DBD8E3;
     display: flex;
     flex-direction: row;
 }
@@ -64,7 +64,7 @@ body{
     border-spacing: 17px;
 }
 .navli a:hover{
-    background-color: red;
+    background-color: #a099b1;
     color: white;
 }
 .userNavbar{
@@ -82,7 +82,7 @@ body{
     height: 30%;
     width: 60%;
     margin: 1.7rem;
-    box-shadow: 0px -5px 16px grey;
+    box-shadow: 0px -5px 16px #0a0909;
     margin:2% auto;
 }
 .cat_gallery_image{
@@ -140,17 +140,24 @@ body{
     width: 80%;
 }
 .image_hover img{
-    transition: all 1s;
+    transition: all 0.3s;
 }
 .image_hover img:hover{
     transform: scale(1.04);
 }
 .rectangle{
+    /* height: 200px;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    margin: 2% auto; */
     height: 200px;
     width: 80%;
     margin: auto;
     position: relative;
     margin: 2% auto;
+    background-color: #898299;
+    box-shadow: 0px -5px 16px #0a0909;
 }
 .rectangle a{
     color: #000000;
@@ -166,13 +173,19 @@ body{
     justify-content: center;
 }
 .rectangle_text1{
-    color: rgb(110, 113, 116);
+    /* color: rgb(110, 113, 116);
+    font-family: 'Dancing Script', cursive;
+    font-size: medium; */
+    color: #00162b;
     font-family: 'Dancing Script', cursive;
     font-size: medium;
 }
 .rectangle_text3{
-    color: rgb(150, 159, 159);
+    color: rgb(42 56 56);
     font-size: x-small;
+}
+.rectangle_text2:hover{
+    color: #DBD8E3;
 }
 .footer_class{
     margin-top: 7%;
@@ -194,6 +207,6 @@ body{
     display: inline;
     margin-right: 4%;
 }
-.contact-icons{
+.sports_contact-icons{
     width: 673%;
 }

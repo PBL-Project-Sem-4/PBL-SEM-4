@@ -5,11 +5,11 @@ function PupularNews() {
       <div>
     <div class="shortnews_heading">
     <div>
-        <b>Most popular stories today</b> 
+        <b style={{color:'#DBD8E3'}}>Most popular stories today</b> 
     </div>
 </div>
 <div class="shortnews row my-4">
-    <div class="usershortnews card col-lg-2 col-md-6" style={{width:'16rem'}}>
+    <div class="usershortnews image_hover card col-lg-2 col-md-6" style={{width:'16rem'}}>
       <img
         src="https://c.ndtvimg.com/2022-02/4laf8a_deepak-chahar-bcci_625x300_20_February_22.jpg?im=FeatureCrop,algorithm=dnn,width=240,height=180"
         class="card-img-top cardimages"
@@ -29,7 +29,7 @@ function PupularNews() {
       </div>
     </div>
 
-    <div class="usershortnews card col-lg-2 col-md-6" style={{width:'16rem'}}>
+    <div class="usershortnews image_hover card col-lg-2 col-md-6" style={{width:'16rem'}}>
       <img
         src="https://cache.careers360.mobi/media/presets/240X180/article_images/2022/2/22/shutterstock_2044525388_1.jpg"
         class="card-img-top cardimages"
@@ -49,7 +49,7 @@ function PupularNews() {
       </div>
     </div>
 
-    <div class="usershortnews card col-lg-2 col-md-6" style={{width:'16rem'}}>
+    <div class="usershortnews image_hover card col-lg-2 col-md-6" style={{width:'16rem'}}>
       <img
         src="https://c.ndtvimg.com/2022-02/pmkojrj_stray-cattle_120x90_22_February_22.jpg"
         class="card-img-top cardimages"
@@ -69,7 +69,7 @@ function PupularNews() {
       </div>
     </div>
 
-    <div class="usershortnews card col-lg-2 col-md-6" style={{width:'16rem'}}>
+    <div class="usershortnews image_hover card col-lg-2 col-md-6" style={{width:'16rem'}}>
       <img
         src="https://c.ndtvimg.com/2022-02/ss6n626_rishabh-pant-billiards_120x90_22_February_22.jpg"
         class="card-img-top cardimages"
@@ -89,7 +89,7 @@ function PupularNews() {
       </div>
     </div>
 
-    <div class="usershortnews card col-lg-2 col-md-6" style={{width:'16rem'}}>
+    <div class="usershortnews image_hover card col-lg-2 col-md-6" style={{width:'16rem'}}>
         <img
           src="https://c.ndtvimg.com/2022-02/ss6n626_rishabh-pant-billiards_120x90_22_February_22.jpg"
           class="card-img-top cardimages"

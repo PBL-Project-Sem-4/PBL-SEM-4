@@ -7,10 +7,7 @@ import axios from "./axios"
 import { NewsContext } from './NewsContext'
 
 function Row(props) {
-    //  const {data} = useContext(NewsContext);
-    //  console.log(data);
     const [data,setData]=useState();
-    const apiKey="2c775f4e4c2a4c2590c3821a0b546db4";
 useEffect(()=>{
     axios.get(`${props.type}`
     ).then(response=>setData(response.data))
@@ -18,10 +15,11 @@ useEffect(()=>{
    console.log(data)
     
 },[])
+
  
   return (
     
-        <div class="shortnews row my-4">
+        <div class="shortnews row ">
 
         {data ? data.articles.map(news=> <Cards data={news} key={news.url} />): "Loading"}
 

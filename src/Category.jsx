@@ -4,12 +4,11 @@ import { useContext } from 'react'
 import Cards from './Cards'
 import "./category.css"
 import axios from "./axios"
-import { NewsContext } from './NewsContext'
+// import { NewsContext } from './NewsContext'
 import CategoryCard from './CategoryCard'
 function Category(props) {
-
   const [data,setData]=useState();
-  const apiKey="2c775f4e4c2a4c2590c3821a0b546db4";
+  // const apiKey="2c775f4e4c2a4c2590c3821a0b546db4";
 useEffect(()=>{
   axios.get(`${props.type}`
   ).then(response=>setData(response.data))
@@ -21,6 +20,7 @@ useEffect(()=>{
    
   return (
       <div>
+
         <div class="cat_gallery">
         <a href="#">
         <div class="top image_hover">

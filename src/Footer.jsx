@@ -2,14 +2,14 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div class="footer_class">
+    <div class="footer_class" id='myfooter'>
     <footer
                 class="text-center text-lg-start text-dark"
-                style={{backgroundColor: '#ECEFF1'}}
+                style={{backgroundColor: '#DBD8E3'}}
                 >
           <section
                    class="d-flex justify-content-between p-4 text-white"
-                   style={{backgroundColor: 'red'}}
+                   style={{backgroundColor: 'black'}}
                    >
             <div class="sports_me-5">
               <span>Get connected with us on social networks:</span>
