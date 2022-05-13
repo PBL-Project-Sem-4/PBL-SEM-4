@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { addUser } from "../axios";
 import { useHistory } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 function Signin(props) {
   const history = useHistory();
   const userInfo = { Username: "", Email: "", Password: "" };
@@ -38,16 +40,19 @@ function Signin(props) {
               />
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 col-8">
-              <form class="myform" method="POST" action="signinUser">
+              <form class="myform" method="POST">
                 <div class="form-outline mb-4">
                   <input
-                    required="true"
+                   required="true"
                     type="text"
                     name="Username"
                     class="form-control form-control-lg"
                     placeholder="Enter name"
                     onChange={changeHandler}
                   />
+                  {/* <Form.Check
+                  type="text"
+                  /> */}
                   <label class="form-label" for="form3Example3">
                     Username
                   </label>

@@ -1,4 +1,4 @@
-const apiKey=`2c775f4e4c2a4c2590c3821a0b546db4`;
+const apiKey=`d1c18beac50342af94b68b463755ef3f`;
 
 const request={
     GeneralNews:`https://newsapi.org/v2/everything?apiKey=${apiKey}&language=en&q=general`,
