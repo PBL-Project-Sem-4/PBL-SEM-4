@@ -25,8 +25,4 @@ mongoose
   })
   .catch(error => {
     console.log('Error: ', error.message)
-<<<<<<< HEAD
   })
-=======
-  })
->>>>>>> 12b14bb472c245995bec94b68c46e86bae8461c9

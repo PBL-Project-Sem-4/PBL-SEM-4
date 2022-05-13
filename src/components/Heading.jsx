@@ -53,7 +53,7 @@ function Heading(props) {
   };
   return (
     <div>
-      <div class="navAbove header">
+      <div className="navAbove header">
         <div className="newstitle">
           <h1
             class=" newstitle fs-1 "
