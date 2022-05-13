@@ -2,12 +2,8 @@ import React from 'react'
 import "./style.css"
 function Footer() {
   return (
-<<<<<<< HEAD:src/Footer.jsx
-    <div class="footer_class" id='myfooter'>
-=======
     <div class="footer_class my-auto mt-4" id="myfooter"  
     style={{ fontFamily: "Poppins ,sans-serif" }}>
->>>>>>> 12b14bb472c245995bec94b68c46e86bae8461c9:src/components/Footer.jsx
     <footer
                 class="text-center text-lg-start text-dark"
                 style={{backgroundColor: '#DBD8E3'}}

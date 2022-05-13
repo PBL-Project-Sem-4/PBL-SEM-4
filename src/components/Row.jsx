@@ -7,24 +7,6 @@ import axios from "../axios";
 import { NewsContext } from "./NewsContext";
 
 function Row(props) {
-<<<<<<< HEAD:src/Row.jsx
-    const [data,setData]=useState();
-useEffect(()=>{
-    axios.get(`${props.type}`
-    ).then(response=>setData(response.data))
-    .catch(error=>console(error));
-   console.log(data)
-    
-},[])
-
- 
-  return (
-    
-        <div class="shortnews row ">
-
-        {data ? data.articles.map(news=> <Cards data={news} key={news.url} />): "Loading"}
-
-=======
   //  const {data} = useContext(NewsContext);
   //  console.log(data);
   const [data, setData] = useState();
@@ -42,7 +24,6 @@ useEffect(()=>{
       {data
         ? data.articles.map((news) => <Cards data={news} key={news.url} />)
         : "Loading"}
->>>>>>> 12b14bb472c245995bec94b68c46e86bae8461c9:src/components/Row.jsx
 
       {/* <Cards
         links="https://c.ndtvimg.com/2022-02/4laf8a_deepak-chahar-bcci_625x300_20_February_22.jpg?im=FeatureCrop,algorithm=dnn,width=240,height=180"

@@ -12,16 +12,9 @@ function HeadNews() {
    const apiKey="d1c18beac50342af94b68b463755ef3f";
 useEffect(()=>{
    axios.get(`https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${apiKey}`
-<<<<<<< HEAD:src/HeadNews.jsx
-   ).then(response=>setData(...data, response.data))
-   .catch(error=>console(error))
-   console.log(data);
-  // data = data.articles;
-=======
    ).then(response=>setData(response.data))
    .catch(error=>console.log(error))
      
->>>>>>> 12b14bb472c245995bec94b68c46e86bae8461c9:src/components/HeadNews.jsx
 },[])
 
 console.log("data",data);
