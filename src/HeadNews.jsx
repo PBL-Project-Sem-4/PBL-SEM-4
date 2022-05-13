@@ -9,17 +9,17 @@ import request from './request'
 function HeadNews() {
 
       const [data,setData]=useState();
-   const apiKey="2c775f4e4c2a4c2590c3821a0b546db4";
+   const apiKey="d1c18beac50342af94b68b463755ef3f";
 useEffect(()=>{
    axios.get(`https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=${apiKey}`
-   ).then(response=>setData(response.data))
+   ).then(response=>setData(...data, response.data))
    .catch(error=>console(error))
    console.log(data);
-  
-
+  // data = data.articles;
 },[])
-// console.log(data)
-// console.log(data.articles[1].description)
+
+console.log("data",data);
+
 
   return (
     <div className="gallery">
@@ -27,26 +27,27 @@ useEffect(()=>{
       <div className="left_top image_hover">
         <img
           className="gallery_image"
-          src=""
+          src="https://cdn.cnn.com/cnnnext/dam/assets/220427214015-joe-biden-042722-super-tease.jpg"
           alt="latest news"
         />
         <div className="gallery_text">
           <h5 className="gallery_text1">Top news</h5>
           <h2 className="gallery_text2">
-           
+          {/* Biden will tout 'small business boom' in roundtable with business owners */}
+          {/* {data[0].description} */}
           </h2>
         </div>
       </div>
       <div className="left_bottom image_hover">
         <img
           className="gallery_image"
-          src="https://static.toiimg.com/thumb/msid-90954208,imgsize-1163270,width-400,resizemode-4/90954208.jpg"
+          src="https://ichef.bbci.co.uk/news/1024/branded_news/13635/production/_124231497_gettyimages-1392501224.jpg"
           alt="latest news"
         />
         <div className="gallery_text">
           <h5 className="gallery_text1">Top news</h5>
           <h2 className="gallery_text2">
-            {/* {data.articles[1].description} */}
+          Shanghai lockdown: European firms face 'logistical nightmare', says business group
           </h2>
         </div>
       </div>
