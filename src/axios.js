@@ -12,4 +12,8 @@ export const authenticateUser = async userInfo => {
 export const addUser = async data => {
   return await axios.post(`${url}/signinUser`, data)
 }
+<<<<<<< HEAD
 export default instance
+=======
+export default instance
+>>>>>>> 12b14bb472c245995bec94b68c46e86bae8461c9
