@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { authenticateUser } from "../axios";
+import * as yup from "yup"
 import "./style.css"
+
+
+const reviewSchema = yup.object({
+  mail : yup.string().email().required()  ,
+  Password : yup.string().required() 
+})
 function Login(props) {
   const history = useHistory();
   const obj = { Username: "", Password: "" };
@@ -36,7 +43,7 @@ function Login(props) {
               />
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 col-8">
-              <form class="myform" onSubmit={authenticateUser} method="POST">
+              <form class="myform" onSubmit={authenticateUser  } method="POST" >
                 <div class="form-outline mb-4">
                   <input
                     required="true"
@@ -45,6 +52,7 @@ function Login(props) {
                     class="form-control form-control-lg"
                     placeholder="Enter Username"
                     onChange={changeHandler}
+                    
                   />
                   <label class="form-label" for="form3Example3">
                     Username

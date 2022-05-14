@@ -7,7 +7,7 @@ import request from './request'
 function News() {
   return (
     <div>
-    <div class="shortnews_container_text"><b className='latest' style={{color:'#DBD8E3'}}> Latest news</b></div>   
+    <div class="shortnews_container_text "><div><h3> Latest news</h3><hr/></div> </div>  
       <NewsContextProvider>
       <Row type={request.BusinessNews}/>
       <Row type={request.FasionNews}/>

@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@200&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Pacifico&family=Poppins:wght@200&display=swap');
 * {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 body{ 
     /* margin: 0;
@@ -11,6 +13,10 @@ body{
     font-family: 'Poppins', sans-serif;
 
 } 
+hr{
+  width: 90vw;
+}
+
 .main-div {
   margin: 0;
   padding: 0;
@@ -124,13 +130,15 @@ body{
   padding: 0 5%;
   position: absolute;
   bottom: 1%;
+  font-family: 'Montserrat', sans-serif;
 }
 .gallery_text2 {
   text-shadow: 5px 5px 6px black;
   color: white;
 }
-.shortnews_heading b {
-  font-family: "Lato", sans-serif;
+.shortnews_heading h3 {
+  font-weight:400;
+  font-weight: bolder;
 }
 .shortnews_container_text b {
   font-family: "Lato", sans-serif;
@@ -231,10 +239,11 @@ body{
   font-weight: bolder;
   font-size: large;
 }
-.container p {
-  /* font-family: 'Times New Roman', Times, serif; */
-  font-size: large;
+.shortnews_container_text h3{
+  text-align: center;
+  font-weight: bold;
 }
+
 .icons {
   display: inline;
   margin-right: 4%;
@@ -247,6 +256,10 @@ body{
   margin: auto 0px;
   font-size: 20px;
   text-align: center;
+}
+
+.sports_contact_icons{
+  font-family: "Poppins" ,sans-serif;
 }
 
 .header{
