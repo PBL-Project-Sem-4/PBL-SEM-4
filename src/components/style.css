@@ -17,6 +17,30 @@ hr{
   width: 90vw;
 }
 
+.developers{
+  margin-left: 1rem;
+}
+.profileimage{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  /* border: 1px solid black; */
+  box-shadow: 1px 1px 2px 3px rgba(105, 105, 123, 0.18);
+
+  margin: 0 auto;
+  
+  
+}
+
+.devprofile p{
+  font-weight: bolder;
+  font-size: large;
+}
+
+  .sports_contact_icons p{
+    margin: 2.5rem 0 ;
+  }
+
 .main-div {
   margin: 0;
   padding: 0;
