@@ -38,7 +38,7 @@ hr{
 }
 
   .sports_contact_icons p{
-    margin: 2.5rem 0 ;
+    margin: 3.5rem 0 ;
   }
 
 .main-div {
@@ -245,6 +245,10 @@ hr{
   text-decoration: none;
   margin: 0 2%;
   font-size: 1.1rem;
+}
+
+.footer-main{
+  /* background-image: linear-gradient(to right ,  #ffafbd , #ffc3a0 ); */
 }
 .copyright {
   margin-top: 1%;

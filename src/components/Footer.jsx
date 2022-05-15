@@ -31,8 +31,8 @@ function Footer() {
 
         <div class="footer-main d-flex ">
           <div className="developers w-50 my-3">
-            <div className="col"></div>
-            <div className="row  justify-content-lg-center" align="center">
+          <h6 class="devloper_title fs-3 text-center fw-bold ">Developers</h6>
+            <div className="row  justify-content-lg-center m-5" align="center">
               <div className="col-4 devprofile ">
                 <div className="profileimage"></div>
                 <p>Sayeed</p>
@@ -58,10 +58,10 @@ function Footer() {
 
           </div>
 
-          <div className="footer-contact  mx-auto my-4 fs-5">
+          <div className="footer-contact  mx-auto my-4 fs-5 ">
             <div className="col " >
             <h6 class="sports_text-uppercase fs-3 text-center fw-bold ">Contact Us</h6>
-            <div className="sports_contact_icons my-5">
+            <div className="sports_contact_icons my-5 align-middle">
             <p><i class="sports_icons fas fa-home mr-3"></i> PICT, Dhankawdi, Pune</p>
             <p><i class="sports_icons fas fa-envelope mr-3"></i> sanketjhavar66@gmail.com</p>
             <p><i class="sports_icons fas fa-phone mr-3"></i> +91 7057705699</p>

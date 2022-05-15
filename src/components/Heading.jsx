@@ -21,7 +21,7 @@ const HeaderButtons = (props) => {
     );
   } else {
     return (
-      <div class="elements d-flex flex-row-lg my-auto  justify-content-end">
+      <div class="elements d-flex flex-row-lg my-auto  justify-content-end sticky-top">
         <Link to={"/signin"}>
           <button class="signin my-auto d-flex flex-row btn btn-dark">
             <i class="fa fa-duotone fa-user "></i>
@@ -54,7 +54,7 @@ function Heading(props) {
   };
   return (
     <div>
-      <div className="header ">
+      <div className="header sticky-top navbar">
         <div className="newstitle">
           <h1
             class=" newstitle fs-1 "
@@ -70,7 +70,7 @@ function Heading(props) {
         />
       </div>
       <div class="navigation">
-        <nav class="navbar navbar-expand-md bg-dark">
+        <nav class="navbar navbar-expand-md bg-dark ">
           <div class="container-fluid">
             <button
               class="navbar-toggler"
