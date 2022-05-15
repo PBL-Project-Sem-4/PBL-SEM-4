@@ -1,5 +1,8 @@
 import React from 'react'
 import "./style.css"
+import hd from '../images/harsh.jpg'
+import sj from '../images/sanket.jpg'
+import sk from '../images/samruddhi.jpg'
 function Footer() {
   return (
     <div class="footer_class mx-auto mt-4 w-100" id="myfooter"
@@ -9,50 +12,49 @@ function Footer() {
           <div class="sports_me-5">
             <h5>Get connected with us on social networks:</h5>
           </div>
-          <div class="myfooter_icons fs-4">
-            <a href="https://www.facebook.com/harsh.dhawale.792/" target="blank" class="text-white me-4">
-              <i class="fab fa-facebook-f"></i>
+          <div className="myfooter_icons fs-4">
+            <a href="https://www.facebook.com/harsh.dhawale.792/" target="blank" className="text-white me-4">
+              <i className="fab fa-facebook-f"></i>
             </a>
-            <a href="mailto:harshdhawale2404@gmail.com" target="blank" class="text-white me-4">
-              <i class="fab fa-google"></i>
+            <a href="mailto:harshdhawale2404@gmail.com" target="blank" className="text-white me-4">
+              <i className="fab fa-google"></i>
             </a>
-            <a href="https://www.instagram.com/_harsh.4_/" target="blank" class="text-white me-4">
-              <i class="fab fa-instagram"></i>
+            <a href="https://www.instagram.com/_harsh.4_/" target="blank" className="text-white me-4">
+              <i className="fab fa-instagram"></i>
             </a>
-            <a href="https://www.linkedin.com/in/harsh-dhawale-296301205/" target="blank" class="text-white me-4">
-              <i class="fab fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/harsh-dhawale-296301205/" target="blank" className="text-white me-4">
+              <i className="fab fa-linkedin"></i>
             </a>
-            <a href="https://github.com/SanketJhavar" target="blank" class="text-white me-4">
-              <i class="fab fa-github"></i>
+            <a href="https://github.com/SanketJhavar" target="blank" className="text-white me-4">
+              <i className="fab fa-github"></i>
             </a>
           </div>
         </div>
         {/* <section class=""> */}
 
-        <div class="footer-main d-flex ">
+        <div className="footer-main d-flex ">
           <div className="developers w-50 my-3">
-          <h6 class="devloper_title fs-3 text-center fw-bold ">Developers</h6>
+          <h6 className="devloper_title fs-3 text-center fw-bold ">Developers</h6>
             <div className="row  justify-content-lg-center m-5" align="center">
               <div className="col-4 devprofile ">
                 <div className="profileimage"></div>
-                <p>Sayeed</p>
+                <p>Sayeed Khan</p>
+              </div>
+              <div className="col-4 devprofile">
+                <div className="profileimage"><img src={hd}  className="profileimage" /></div>
+                <p>Harsh Dhawale</p>
+              </div>
+              <div className="col-4 devprofile">
+                <div className="profileimage"><img src={sj}  className="profileimage" /></div>
+                <p>Sanket Jhavar</p>
               </div>
               <div className="col-4 devprofile">
                 <div className="profileimage"></div>
-                {/* <img src="%PUBLIC_URL%/images/mypic.jpg"  class="profileimage" /> */}
-                <p>Harsh</p>
+                <p>Hetavi Gandhi</p>
               </div>
               <div className="col-4 devprofile">
-                <div className="profileimage"></div>
-                <p>Sanket</p>
-              </div>
-              <div className="col-4 devprofile">
-                <div className="profileimage"></div>
-                <p>Hetavi</p>
-              </div>
-              <div className="col-4 devprofile">
-                <div className="profileimage"></div>
-                <p>Samruddhi</p>
+                <div className="profileimage"><img src={sk}  className="profileimage" /></div>
+                <p>Samruddhi Kadam</p>
               </div>
             </div>
 

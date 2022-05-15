@@ -1,9 +1,9 @@
 import React from 'react'
-
+import './style.css'
 function CategoryCard(props) {
   return (
     
-          <div class="rectangle">
+          <div class="rectangle ">
             <a href={props.data.url}>
             <div class="rectangle_left image_hover">
                 <img

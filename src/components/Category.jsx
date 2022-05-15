@@ -18,34 +18,34 @@ function Category(props) {
 
   return (
     <div>
-      <div class="cat_gallery">
+      <div className="cat_gallery">
         <a href="#">
-          <div class="top image_hover">
+          <div className="top image_hover">
             <img
-              class="cat_gallery_image"
+              className="cat_gallery_image"
               src="https://static.toiimg.com/thumb/resizemode-4,msid-91139289,width-800,height-450,ver-75/91139289.jpg"
               alt="latest news"
             />
-            <div class="cat_gallery_text">
-              <h5 class="cat_gallery_text1">Top news</h5>
-              <h2 class="cat_gallery_text2">
+            <div className="cat_gallery_text">
+              <h5 className="cat_gallery_text1">Top news</h5>
+              <h2 className="cat_gallery_text2">
                 Xiaomi Pad 5 buying guide: 10 things to know about company’s
                 first tablet in India
               </h2>
             </div>
           </div>
         </a>
-        <div class="bottom">
-          <div class="bottom_left image_hover">
+        <div className="bottom">
+          <div className="bottom_left image_hover">
             <a href="#">
               <img
-                class="gallery_image"
+                className="gallery_image"
                 src="https://c.ndtvimg.com/2022-02/angj81s8_julian-assange_625x300_10_February_22.jpg"
                 alt="latest news"
               />
-              <div class="gallery_text">
-                <h6 class="gallery_text1">Top news</h6>
-                <h4 class="gallery_text2">
+              <div className="gallery_text">
+                <h6 className="gallery_text1">Top news</h6>
+                <h4 className="gallery_text2">
                   UK Court Formally Issues Order To Extradite Julian Assange To
                   US
                 </h4>
@@ -53,16 +53,16 @@ function Category(props) {
             </a>
           </div>
 
-          <div class="bottom_right image_hover">
+          <div className="bottom_right image_hover bg-light">
             <a href="#">
               <img
-                class="gallery_image"
+                className="gallery_image"
                 src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2022/04/edied-1100-1650432581.jpg"
                 alt="latest news"
               />
-              <div class="gallery_text">
-                <h6 class="gallery_text1">Top news</h6>
-                <h4 class="gallery_text2">
+              <div className="gallery_text">
+                <h6 className="gallery_text1">Top news</h6>
+                <h4 className="gallery_text2">
                   Jahangirpuri LIVE: 'Turkman Gate 2022,' Owaisi blames BJP,
                   AAP; stopped from visiting riot-hit area
                 </h4>
@@ -71,7 +71,7 @@ function Category(props) {
           </div>
         </div>
       </div>
-      <div class="manydiv">
+      <div className="manydiv">
         {data
           ? data.articles.map((news) => (
               <CategoryCard data={news} key={news.url} />
