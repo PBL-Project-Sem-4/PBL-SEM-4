@@ -27,17 +27,22 @@ function Login(props) {
   };
   const changeHandler = (event) => {
     setUserInfo({ ...userInfo, [event.target.name]: event.target.value });
+    var btn = document.getElementById("subbtn");
     if (event.target.name === "Password") {
       if (event.target.value.length > 4 && userInfo.Username.length > 4) {
-        document.getElementById("subbtn").style.cursor = "pointer";
+        btn.disabled = false;
+        btn.style.cursor = "pointer";
       } else {
-        document.getElementById("subbtn").style.cursor = "not-allowed";
+        btn.disabled = true;
+        btn.style.cursor = "not-allowed";
       }
     } else {
       if (event.target.value.length > 4 && userInfo.Password.length > 4) {
-        document.getElementById("subbtn").style.cursor = "pointer";
+        btn.disabled = false;
+        btn.style.cursor = "pointer";
       } else {
-        document.getElementById("subbtn").style.cursor = "not-allowed";
+        btn.disabled = true;
+        btn.style.cursor = "not-allowed";
       }
     }
   };
@@ -94,6 +99,7 @@ function Login(props) {
                     onClick={onLoginHandler}
                     type="button"
                     id="subbtn"
+                    disabled={true}
                   >
                     Login
                   </button>

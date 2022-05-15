@@ -27,11 +27,14 @@ function Signin(props) {
       ) {
         if (user.Password === cpass) {
           document.getElementById("signinbtn").style.cursor = "pointer";
+          document.getElementById("signinbtn").disabled = false;
         } else {
           document.getElementById("signinbtn").style.cursor = "not-allowed";
+          document.getElementById("signinbtn").disabled = true;
         }
       } else {
         document.getElementById("signinbtn").style.cursor = "not-allowed";
+        document.getElementById("signinbtn").disabled = true;
       }
     } else if (event.target.name === "Password") {
       if (
@@ -41,11 +44,14 @@ function Signin(props) {
       ) {
         if (event.target.value === cpass) {
           document.getElementById("signinbtn").style.cursor = "pointer";
+          document.getElementById("signinbtn").disabled = false;
         } else {
           document.getElementById("signinbtn").style.cursor = "not-allowed";
+          document.getElementById("signinbtn").disabled = true;
         }
       } else {
         document.getElementById("signinbtn").style.cursor = "not-allowed";
+        document.getElementById("signinbtn").disabled = true;
       }
     } else if (event.target.name === "Email") {
       if (
@@ -55,11 +61,14 @@ function Signin(props) {
       ) {
         if (user.Password === cpass) {
           document.getElementById("signinbtn").style.cursor = "pointer";
+          document.getElementById("signinbtn").disabled = false;
         } else {
           document.getElementById("signinbtn").style.cursor = "not-allowed";
+          document.getElementById("signinbtn").disabled = true;
         }
       } else {
         document.getElementById("signinbtn").style.cursor = "not-allowed";
+        document.getElementById("signinbtn").disabled = true;
       }
     } else {
       if (
@@ -69,11 +78,14 @@ function Signin(props) {
       ) {
         if (user.Password === event.target.value) {
           document.getElementById("signinbtn").style.cursor = "pointer";
+          document.getElementById("signinbtn").disabled = false;
         } else {
           document.getElementById("signinbtn").style.cursor = "not-allowed";
+          document.getElementById("signinbtn").disabled = true;
         }
       } else {
         document.getElementById("signinbtn").style.cursor = "not-allowed";
+        document.getElementById("signinbtn").disabled = true;
       }
     }
   };
@@ -175,6 +187,7 @@ function Signin(props) {
                       cursor: "not-allowed",
                     }}
                     onClick={formSubmitHandler}
+                    disabled={true}
                   >
                     Sign In
                   </button>
