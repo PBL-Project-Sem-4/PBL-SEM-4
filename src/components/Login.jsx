@@ -1,34 +1,45 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { authenticateUser } from "../axios";
-import * as yup from "yup"
-import "./style.css"
+// import * as yup from "yup"
+import "./style.css";
 
-
-const reviewSchema = yup.object({
-  mail : yup.string().email().required()  ,
-  Password : yup.string().required() 
-})
+// const reviewSchema = yup.object({
+//   mail : yup.string().email().required()  ,
+//   Password : yup.string().required()
+// })
 function Login(props) {
   const history = useHistory();
   const obj = { Username: "", Password: "" };
   const [userInfo, setUserInfo] = useState(obj);
   const onLoginHandler = async (event) => {
     let res = await authenticateUser(userInfo);
-    if (res.data.message === 'User authenticated!') {
-      props.setToken(true)
-      props.setUsername(res.data.username)
-      localStorage.removeItem("Username")
-      localStorage.setItem("Username", res.data.username)
-      history.push('/')
-    }
-    else {
-      localStorage.setItem("Message", res.data.message)
-      history.push('/')
+    if (res.data.message === "User authenticated!") {
+      props.setToken(true);
+      props.setUsername(res.data.username);
+      localStorage.removeItem("Username");
+      localStorage.setItem("Username", res.data.username);
+      history.push("/");
+    } else {
+      localStorage.setItem("Message", res.data.message);
+      history.push("/");
     }
   };
   const changeHandler = (event) => {
     setUserInfo({ ...userInfo, [event.target.name]: event.target.value });
+    if (event.target.name === "Password") {
+      if (event.target.value.length > 4 && userInfo.Username.length > 4) {
+        document.getElementById("subbtn").style.cursor = "pointer";
+      } else {
+        document.getElementById("subbtn").style.cursor = "not-allowed";
+      }
+    } else {
+      if (event.target.value.length > 4 && userInfo.Password.length > 4) {
+        document.getElementById("subbtn").style.cursor = "pointer";
+      } else {
+        document.getElementById("subbtn").style.cursor = "not-allowed";
+      }
+    }
   };
   return (
     <div>
@@ -43,7 +54,7 @@ function Login(props) {
               />
             </div>
             <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 col-8">
-              <form class="myform" onSubmit={authenticateUser  } method="POST" >
+              <form class="myform" onSubmit={authenticateUser} method="POST">
                 <div class="form-outline mb-4">
                   <input
                     required="true"
@@ -52,7 +63,6 @@ function Login(props) {
                     class="form-control form-control-lg"
                     placeholder="Enter Username"
                     onChange={changeHandler}
-                    
                   />
                   <label class="form-label" for="form3Example3">
                     Username
@@ -76,9 +86,14 @@ function Login(props) {
                 <div class="text-center text-lg-start mt-4 pt-2">
                   <button
                     class="btn btn-primary btn-lg"
-                    style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
+                    style={{
+                      paddingLeft: "2.5rem",
+                      paddingRight: "2.5rem",
+                      cursor: "not-allowed",
+                    }}
                     onClick={onLoginHandler}
                     type="button"
+                    id="subbtn"
                   >
                     Login
                   </button>

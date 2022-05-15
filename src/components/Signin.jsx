@@ -8,23 +8,87 @@ function Signin(props) {
   const history = useHistory();
   const userInfo = { Username: "", Email: "", Password: "" };
   const [user, setUser] = useState(userInfo);
+  const [cpass, setcpass] = useState("");
   const changeHandler = (event) => {
-    setUser({ ...user, [event.target.name]: event.target.value });
+    if (
+      event.target.name === "Username" ||
+      event.target.name === "Email" ||
+      event.target.name === "Password"
+    )
+      setUser({ ...user, [event.target.name]: event.target.value });
+    else {
+      setcpass(event.target.value);
+    }
+    if (event.target.name === "Username") {
+      if (
+        event.target.value.length > 4 &&
+        user.Email.includes("@") &&
+        user.Password.length > 4
+      ) {
+        if (user.Password === cpass) {
+          document.getElementById("signinbtn").style.cursor = "pointer";
+        } else {
+          document.getElementById("signinbtn").style.cursor = "not-allowed";
+        }
+      } else {
+        document.getElementById("signinbtn").style.cursor = "not-allowed";
+      }
+    } else if (event.target.name === "Password") {
+      if (
+        event.target.value.length > 4 &&
+        user.Email.includes("@") &&
+        user.Username.length > 4
+      ) {
+        if (event.target.value === cpass) {
+          document.getElementById("signinbtn").style.cursor = "pointer";
+        } else {
+          document.getElementById("signinbtn").style.cursor = "not-allowed";
+        }
+      } else {
+        document.getElementById("signinbtn").style.cursor = "not-allowed";
+      }
+    } else if (event.target.name === "Email") {
+      if (
+        user.Username.length > 4 &&
+        event.target.value.includes("@") &&
+        user.Password.length > 4
+      ) {
+        if (user.Password === cpass) {
+          document.getElementById("signinbtn").style.cursor = "pointer";
+        } else {
+          document.getElementById("signinbtn").style.cursor = "not-allowed";
+        }
+      } else {
+        document.getElementById("signinbtn").style.cursor = "not-allowed";
+      }
+    } else {
+      if (
+        user.Username.length > 4 &&
+        user.Email.includes("@") &&
+        user.Password.length > 4
+      ) {
+        if (user.Password === event.target.value) {
+          document.getElementById("signinbtn").style.cursor = "pointer";
+        } else {
+          document.getElementById("signinbtn").style.cursor = "not-allowed";
+        }
+      } else {
+        document.getElementById("signinbtn").style.cursor = "not-allowed";
+      }
+    }
   };
   const formSubmitHandler = async (event) => {
-    const response=await addUser(user);
-    if(response)
-    {
-      console.log("Signin successfully!")
-      props.setToken(true)
-      props.setUsername(response.data.Username)
-      localStorage.setItem("Username",response.data.Username)
-      history.push('/')
-    }
-    else{
-      console.log("Signin unsuccessfull!")
+    const response = await addUser(user);
+    if (response) {
+      console.log("Signin successfully!");
+      props.setToken(true);
+      props.setUsername(response.data.Username);
+      localStorage.setItem("Username", response.data.Username);
+      history.push("/");
+    } else {
+      console.log("Signin unsuccessfull!");
       props.setToken(false);
-      history.push('/')
+      history.push("/");
     }
   };
   return (
@@ -43,7 +107,7 @@ function Signin(props) {
               <form class="myform" method="POST">
                 <div class="form-outline mb-4">
                   <input
-                   required="true"
+                    required="true"
                     type="text"
                     name="Username"
                     class="form-control form-control-lg"
@@ -90,8 +154,10 @@ function Signin(props) {
                     required="true"
                     type="password"
                     name="cpass"
+                    id="cpassword"
                     class="form-control form-control-lg "
                     placeholder="Confirm password"
+                    onChange={changeHandler}
                   />
                   <label class="form-label" for="form3Example4">
                     Confirm Password
@@ -103,7 +169,11 @@ function Signin(props) {
                     type="button"
                     class="btn btn-danger btn-lg "
                     id="signinbtn"
-                    style={{ paddingLeft: "2.5rem", paddingRight: "2.5rem" }}
+                    style={{
+                      paddingLeft: "2.5rem",
+                      paddingRight: "2.5rem",
+                      cursor: "not-allowed",
+                    }}
                     onClick={formSubmitHandler}
                   >
                     Sign In
