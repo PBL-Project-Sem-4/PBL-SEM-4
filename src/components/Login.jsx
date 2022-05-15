@@ -9,10 +9,14 @@ import "./style.css";
 //   Password : yup.string().required()
 // })
 function Login(props) {
+  useEffect(() => {
+    document.getElementById('subbtn').disabled = true;
+  }, [])
   const history = useHistory();
   const obj = { Username: "", Password: "" };
   const [userInfo, setUserInfo] = useState(obj);
   const onLoginHandler = async (event) => {
+    console.log("Request made")
     let res = await authenticateUser(userInfo);
     if (res.data.message === "User authenticated!") {
       props.setToken(true);
@@ -99,7 +103,6 @@ function Login(props) {
                     onClick={onLoginHandler}
                     type="button"
                     id="subbtn"
-                    disabled={true}
                   >
                     Login
                   </button>

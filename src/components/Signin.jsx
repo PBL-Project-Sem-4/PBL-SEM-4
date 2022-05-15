@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link } from "react-router-dom";
 import { addUser } from "../axios";
 import { useHistory } from "react-router-dom";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.bundle.min';
 function Signin(props) {
+  useEffect(()=>{
+    document.getElementById("signinbtn").disabled = true;
+  },[])
   const history = useHistory();
   const userInfo = { Username: "", Email: "", Password: "" };
   const [user, setUser] = useState(userInfo);
@@ -22,7 +25,7 @@ function Signin(props) {
     if (event.target.name === "Username") {
       if (
         event.target.value.length > 4 &&
-        user.Email.includes("@") &&
+        user.Email.includes("@gmail.com") &&
         user.Password.length > 4
       ) {
         if (user.Password === cpass) {
@@ -39,7 +42,7 @@ function Signin(props) {
     } else if (event.target.name === "Password") {
       if (
         event.target.value.length > 4 &&
-        user.Email.includes("@") &&
+        user.Email.includes("@gmail.com") &&
         user.Username.length > 4
       ) {
         if (event.target.value === cpass) {
@@ -56,7 +59,7 @@ function Signin(props) {
     } else if (event.target.name === "Email") {
       if (
         user.Username.length > 4 &&
-        event.target.value.includes("@") &&
+        event.target.value.includes("@gmail.com") &&
         user.Password.length > 4
       ) {
         if (user.Password === cpass) {
@@ -73,7 +76,7 @@ function Signin(props) {
     } else {
       if (
         user.Username.length > 4 &&
-        user.Email.includes("@") &&
+        user.Email.includes("@gmail.com") &&
         user.Password.length > 4
       ) {
         if (user.Password === event.target.value) {
@@ -187,7 +190,6 @@ function Signin(props) {
                       cursor: "not-allowed",
                     }}
                     onClick={formSubmitHandler}
-                    disabled={true}
                   >
                     Sign In
                   </button>
